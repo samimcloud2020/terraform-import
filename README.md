@@ -6,7 +6,7 @@ resource "aws_cloudtrail" "foobar" {
   s3_bucket_name                = "unknown"
   s3_key_prefix                 = "unknown"
 }
------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------
 
 C:\Users\BSNL\terrafomsamim\import>terraform import aws_cloudtrail.foobar samim-cloudtrail-21012023
 aws_cloudtrail.foobar: Importing from ID "samim-cloudtrail-21012023"...
@@ -18,10 +18,10 @@ Import successful!
 
 The resources that were imported are shown above. These resources are now in
 your Terraform state and will henceforth be managed by Terraform.
----------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------
 after that you see terraform.tfstate file cretaed and most option it retrived from aws.
 
------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------
 let check by terraform plan that any destroy of resourece will happen.
 
 C:\Users\BSNL\terrafomsamim\import>terraform plan
@@ -48,11 +48,7 @@ Terraform will perform the following actions:
 
 Plan: 1 to add, 0 to change, 1 to destroy.   <--------------------------------------SEE ONE DESTROY SEEN
 
-──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-
-Note: You didn't use the -out option to save this plan, so Terraform can't guarantee to take exactly these actions if you run "terraform apply" now.
-
-
+--------------------------------------------------------------------------------------------------------------------------------------------------------
 NOW LET ADD THE NAME OF CLOUDTRAIL
 
 resource "aws_cloudtrail" "foobar" {
@@ -61,7 +57,7 @@ resource "aws_cloudtrail" "foobar" {
   s3_key_prefix                 = "unknown"
 }
 
--------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------
 let now do terraform plan
 
 C:\Users\BSNL\terrafomsamim\import>terraform plan
@@ -85,10 +81,7 @@ Terraform will perform the following actions:
 
 Plan: 0 to add, 1 to change, 0 to destroy.   <-----------
 
-──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-
-Note: You didn't use the -out option to save this plan, so Terraform can't guarantee to take exactly these actions if you run "terraform apply" now.
---------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 resource "aws_cloudtrail" "foobar" {
   name                          = "samim-cloudtrail-21012023"
@@ -115,7 +108,7 @@ Terraform will perform the following actions:
     }
 
 Plan: 0 to add, 1 to change, 0 to destroy.  <---------
-------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------
 resource "aws_cloudtrail" "foobar" {
   name                          = "samim-cloudtrail-21012023"
   s3_bucket_name                = "cloudtrail-samim-rourkela"
@@ -148,7 +141,7 @@ resource "aws_cloudtrail" "foobar" {
   include_global_service_events = "false"
 }
 
----------------------again do terraform plan--------------------
+---------------------again do terraform plan-----------------------------------------------------------------------------------------------------------------
 C:\Users\BSNL\terrafomsamim\import>terraform plan
 aws_cloudtrail.foobar: Refreshing state... [id=samim-cloudtrail-21012023]
 
